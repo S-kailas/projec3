@@ -14,38 +14,11 @@
 }
 
 body{
-    background:#111;
-    color:#eee;
-    line-height:1.6;
+    background:#0f0f0f;
+    color:#fff;
 }
 
-header{
-    position:fixed;
-    width:100%;
-    background:#000;
-    padding:15px 8%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    z-index:1000;
-}
-
-header h1{
-    color:#e10600;
-    font-size:22px;
-}
-
-nav a{
-    color:#ccc;
-    margin-left:20px;
-    text-decoration:none;
-    transition:0.3s;
-}
-
-nav a:hover{
-    color:#e10600;
-}
-
+/* HERO */
 .hero{
     height:100vh;
     background:url("png2.png") center/cover no-repeat;
@@ -56,138 +29,171 @@ nav a:hover{
     padding:20px;
 }
 
-.hero-overlay{
-    background:rgba(0,0,0,0.7);
-    padding:40px;
-    border-radius:10px;
+.overlay{
+    background:rgba(0,0,0,0.75);
+    padding:50px 30px;
+    border-radius:12px;
+    max-width:700px;
 }
 
-.hero h2{
+.brand{
+    font-size:26px;
+    color:#e10600;
+    margin-bottom:20px;
+    letter-spacing:1px;
+}
+
+.hero h1{
     font-size:42px;
-    margin-bottom:15px;
-    color:#fff;
+    margin-bottom:20px;
 }
 
 .hero p{
     font-size:18px;
-    margin-bottom:25px;
+    color:#ccc;
+    margin-bottom:30px;
 }
 
 .btn{
-    padding:12px 25px;
+    padding:14px 30px;
     background:#e10600;
-    color:white;
     border:none;
-    border-radius:5px;
+    color:#fff;
+    border-radius:6px;
+    font-size:16px;
     cursor:pointer;
-    text-decoration:none;
 }
 
+/* SECTION BASE */
 .section{
     padding:80px 8%;
 }
 
-.section h2{
-    text-align:center;
-    margin-bottom:40px;
-    color:#e10600;
-    font-size:32px;
-}
-
-.about{
+/* ABOUT CARD STYLE */
+.about-card{
+    background:#1a1a1a;
+    padding:40px;
+    border-radius:12px;
     max-width:900px;
     margin:auto;
     text-align:center;
-    color:#ccc;
+    border:1px solid #222;
 }
 
+.about-card h2{
+    color:#e10600;
+    margin-bottom:20px;
+}
+
+/* GALLERY */
 .gallery{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
     gap:20px;
 }
 
 .gallery img{
     width:100%;
-    height:300px;
+    height:280px;
     object-fit:cover;
-    border-radius:8px;
-    transition:0.3s;
+    border-radius:10px;
+    transition:0.4s;
 }
 
 .gallery img:hover{
     transform:scale(1.05);
 }
 
-.pricing{
+/* PRICING BUNK STYLE */
+.bunk-wrapper{
     display:flex;
     justify-content:center;
-    gap:30px;
-    flex-wrap:wrap;
 }
 
-.card{
-    background:#1c1c1c;
-    padding:30px;
-    border-radius:10px;
+.bunk{
+    width:320px;
+    border:4px solid #e10600;
+    border-radius:8px;
+    padding:15px;
+    background:#1a1a1a;
+}
+
+.bed{
+    height:85px;
+    background:#2a2a2a;
+    margin:12px 0;
+    border-left:6px solid #e10600;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 15px;
+    border-radius:6px;
+}
+
+.bed span{
+    font-size:16px;
+}
+
+.price{
+    color:#e10600;
+    font-weight:bold;
+}
+
+/* BOOKING */
+.booking{
+    background:#1a1a1a;
+    max-width:500px;
+    margin:auto;
+    padding:40px;
+    border-radius:12px;
+}
+
+.booking h2{
     text-align:center;
-    width:250px;
-    border:1px solid #333;
-    transition:0.3s;
-}
-
-.card:hover{
-    border-color:#e10600;
-}
-
-.card h3{
-    margin-bottom:15px;
-    color:#fff;
-}
-
-.card p{
-    font-size:22px;
+    margin-bottom:25px;
     color:#e10600;
 }
 
-.booking-form{
-    max-width:500px;
-    margin:auto;
-    background:#1c1c1c;
-    padding:30px;
-    border-radius:10px;
-}
-
-.booking-form input,
-.booking-form select{
+.booking input,
+.booking select{
     width:100%;
     padding:12px;
     margin-bottom:15px;
     background:#111;
     border:1px solid #333;
     color:white;
-    border-radius:5px;
+    border-radius:6px;
 }
 
-.booking-form button{
+.booking button{
     width:100%;
     padding:12px;
     background:#e10600;
     border:none;
+    border-radius:6px;
     color:white;
-    border-radius:5px;
     cursor:pointer;
 }
 
-footer{
-    background:#000;
-    padding:30px;
+/* FOOTER CARD STYLE */
+.footer-card{
+    background:#111;
+    padding:40px;
     text-align:center;
-    color:#aaa;
+    border-top:1px solid #222;
+}
+
+.footer-card h3{
+    color:#e10600;
+    margin-bottom:10px;
+}
+
+.footer-card p{
+    color:#bbb;
 }
 
 @media(max-width:768px){
-    .hero h2{
+    .hero h1{
         font-size:30px;
     }
 }
@@ -196,39 +202,31 @@ footer{
 
 <body>
 
-<header>
-    <h1>Peters Dormitories</h1>
-    <nav>
-        <a href="#about">About</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#booking">Book</a>
-    </nav>
-</header>
-
+<!-- HERO -->
 <section class="hero">
-    <div class="hero-overlay">
-        <h2>Modern. Secure. Affordable.</h2>
+    <div class="overlay">
+        <div class="brand">Peters Dormitories</div>
+        <h1>Modern. Secure. Affordable.</h1>
         <p>Opposite Transport Bus Stand, Trivandrum</p>
-        <a href="#booking" class="btn">Book Your Bed</a>
+        <button class="btn" onclick="document.getElementById('booking').scrollIntoView()">Book Your Bed</button>
     </div>
 </section>
 
-<section id="about" class="section">
-    <h2>About Us</h2>
-    <div class="about">
+<!-- ABOUT -->
+<section class="section">
+    <div class="about-card">
+        <h2>About Us</h2>
         <p>
         Established in 2023, Peters Dormitories offers modern 3-tier 
-        train-style dormitory beds with a clean and industrial design setup.
-        Separate sections for men and women. Ideal for students, interview
-        attendees, and short-term visitors seeking affordable stay in
-        central Trivandrum.
+        train-style beds with industrial design interiors. 
+        Separate sections for men and women. 
+        Perfect for students, interview attendees, and short-term visitors.
         </p>
     </div>
 </section>
 
-<section id="gallery" class="section">
-    <h2>Gallery</h2>
+<!-- GALLERY -->
+<section class="section">
     <div class="gallery">
         <img src="png1.png">
         <img src="png2.png">
@@ -237,27 +235,30 @@ footer{
     </div>
 </section>
 
-<section id="pricing" class="section">
-    <h2>Pricing (Per Day)</h2>
-    <div class="pricing">
-        <div class="card">
-            <h3>Top Berth</h3>
-            <p>₹300</p>
-        </div>
-        <div class="card">
-            <h3>Middle Berth</h3>
-            <p>₹400</p>
-        </div>
-        <div class="card">
-            <h3>Lower Berth</h3>
-            <p>₹500</p>
+<!-- PRICING -->
+<section class="section">
+    <div class="bunk-wrapper">
+        <div class="bunk">
+            <div class="bed">
+                <span>Top Berth</span>
+                <span class="price">₹300 / day</span>
+            </div>
+            <div class="bed">
+                <span>Middle Berth</span>
+                <span class="price">₹400 / day</span>
+            </div>
+            <div class="bed">
+                <span>Lower Berth</span>
+                <span class="price">₹500 / day</span>
+            </div>
         </div>
     </div>
 </section>
 
+<!-- BOOKING -->
 <section id="booking" class="section">
-    <h2>Book Your Stay</h2>
-    <div class="booking-form">
+    <div class="booking">
+        <h2>Book Your Stay</h2>
         <form onsubmit="return submitForm()">
             <input type="text" placeholder="Full Name" required>
             <input type="tel" placeholder="Phone Number" required>
@@ -274,11 +275,12 @@ footer{
     </div>
 </section>
 
-<footer>
-    <p>Contact: 9596345678</p>
-    <p>Email: jagadessh@Petersdormitory.com</p>
-    <p>© 2025 Peters Dormitories</p>
-</footer>
+<!-- FOOTER -->
+<section class="footer-card">
+    <h3>Contact</h3>
+    <p>9596345678</p>
+    <p>jagadessh@jagadeeshdormitory.com</p>
+</section>
 
 <script>
 function submitForm(){
