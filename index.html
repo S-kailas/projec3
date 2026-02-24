@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jagadeesh Dormitories</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body{
+    background:#111;
+    color:#eee;
+    line-height:1.6;
+}
+
+header{
+    position:fixed;
+    width:100%;
+    background:#000;
+    padding:15px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:1000;
+}
+
+header h1{
+    color:#e10600;
+    font-size:22px;
+}
+
+nav a{
+    color:#ccc;
+    margin-left:20px;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#e10600;
+}
+
+.hero{
+    height:100vh;
+    background:url("png2.png") center/cover no-repeat;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+}
+
+.hero-overlay{
+    background:rgba(0,0,0,0.7);
+    padding:40px;
+    border-radius:10px;
+}
+
+.hero h2{
+    font-size:42px;
+    margin-bottom:15px;
+    color:#fff;
+}
+
+.hero p{
+    font-size:18px;
+    margin-bottom:25px;
+}
+
+.btn{
+    padding:12px 25px;
+    background:#e10600;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    text-decoration:none;
+}
+
+.section{
+    padding:80px 8%;
+}
+
+.section h2{
+    text-align:center;
+    margin-bottom:40px;
+    color:#e10600;
+    font-size:32px;
+}
+
+.about{
+    max-width:900px;
+    margin:auto;
+    text-align:center;
+    color:#ccc;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:20px;
+}
+
+.gallery img{
+    width:100%;
+    height:300px;
+    object-fit:cover;
+    border-radius:8px;
+    transition:0.3s;
+}
+
+.gallery img:hover{
+    transform:scale(1.05);
+}
+
+.pricing{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+.card{
+    background:#1c1c1c;
+    padding:30px;
+    border-radius:10px;
+    text-align:center;
+    width:250px;
+    border:1px solid #333;
+    transition:0.3s;
+}
+
+.card:hover{
+    border-color:#e10600;
+}
+
+.card h3{
+    margin-bottom:15px;
+    color:#fff;
+}
+
+.card p{
+    font-size:22px;
+    color:#e10600;
+}
+
+.booking-form{
+    max-width:500px;
+    margin:auto;
+    background:#1c1c1c;
+    padding:30px;
+    border-radius:10px;
+}
+
+.booking-form input,
+.booking-form select{
+    width:100%;
+    padding:12px;
+    margin-bottom:15px;
+    background:#111;
+    border:1px solid #333;
+    color:white;
+    border-radius:5px;
+}
+
+.booking-form button{
+    width:100%;
+    padding:12px;
+    background:#e10600;
+    border:none;
+    color:white;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+footer{
+    background:#000;
+    padding:30px;
+    text-align:center;
+    color:#aaa;
+}
+
+@media(max-width:768px){
+    .hero h2{
+        font-size:30px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Jagadeesh Dormitories</h1>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#booking">Book</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-overlay">
+        <h2>Modern. Secure. Affordable.</h2>
+        <p>Opposite Transport Bus Stand, Trivandrum</p>
+        <a href="#booking" class="btn">Book Your Bed</a>
+    </div>
+</section>
+
+<section id="about" class="section">
+    <h2>About Us</h2>
+    <div class="about">
+        <p>
+        Established in 2023, Jagadeesh Dormitories offers modern 3-tier 
+        train-style dormitory beds with a clean and industrial design setup.
+        Separate sections for men and women. Ideal for students, interview
+        attendees, and short-term visitors seeking affordable stay in
+        central Trivandrum.
+        </p>
+    </div>
+</section>
+
+<section id="gallery" class="section">
+    <h2>Gallery</h2>
+    <div class="gallery">
+        <img src="png1.png">
+        <img src="png2.png">
+        <img src="png3.png">
+        <img src="png4.png">
+    </div>
+</section>
+
+<section id="pricing" class="section">
+    <h2>Pricing (Per Day)</h2>
+    <div class="pricing">
+        <div class="card">
+            <h3>Top Berth</h3>
+            <p>₹300</p>
+        </div>
+        <div class="card">
+            <h3>Middle Berth</h3>
+            <p>₹400</p>
+        </div>
+        <div class="card">
+            <h3>Lower Berth</h3>
+            <p>₹500</p>
+        </div>
+    </div>
+</section>
+
+<section id="booking" class="section">
+    <h2>Book Your Stay</h2>
+    <div class="booking-form">
+        <form onsubmit="return submitForm()">
+            <input type="text" placeholder="Full Name" required>
+            <input type="tel" placeholder="Phone Number" required>
+            <select required>
+                <option value="">Select Bed Type</option>
+                <option>Top Berth - ₹300</option>
+                <option>Middle Berth - ₹400</option>
+                <option>Lower Berth - ₹500</option>
+            </select>
+            <input type="date" required>
+            <input type="number" placeholder="Duration (Days)" min="1" required>
+            <button type="submit">Submit Booking</button>
+        </form>
+    </div>
+</section>
+
+<footer>
+    <p>Contact: 9596345678</p>
+    <p>Email: jagadessh@jagadeeshdormitory.com</p>
+    <p>© 2025 Jagadeesh Dormitories</p>
+</footer>
+
+<script>
+function submitForm(){
+    alert("Booking submitted successfully! (Demo Mode)");
+    return false;
+}
+</script>
+
+</body>
+</html>
